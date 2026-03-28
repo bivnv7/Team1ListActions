@@ -19,14 +19,18 @@ namespace ListNumsActions
                 }
                 switch (command)
                 {
-                    case "ins":
-                        //TODO
+                    case "ins":  
+                        nums.Insert(cmd[1], cmd[2]);
                         break;
                     case "del":
-                        //TODO
+                        nums.RemoveAt(cmd[1])
                         break;
                     case "contains":
-                        //TODO
+                        if(nums.contains(cmd[1])){
+                            Console.Writeline("Yes")
+                        } else {
+                            Console.Writeline("No matching number")
+                        }
                         break;
                     case "remove":
                         //TODO
