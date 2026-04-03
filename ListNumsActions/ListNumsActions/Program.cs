@@ -31,7 +31,34 @@ namespace ListNumsActions
                     case "remove":
                         //TODO
                         break;
-                    //TODO
+                    case "countl":
+                        int counter = 0;
+                        for(int n = 0;n < nums.Count;n++)
+                        {
+                            if (nums[n] > int.Parse(cmd[1]))
+                            {
+                                counter++;
+                            }
+                        }
+                        Console.WriteLine(counter);
+                        break;
+
+                    case "cut":
+                        int count = int.Parse(cmd[1]);
+
+                        if (count >= nums.Count)
+                        {
+                            nums.Clear(); 
+                        }
+                        else
+                        {
+                            nums.RemoveRange(0, count); 
+                        }
+                        break;
+
+                    case "print":
+                        Console.WriteLine(string.Join(" ", nums));
+                        break;
 
                     default:
                         break;
