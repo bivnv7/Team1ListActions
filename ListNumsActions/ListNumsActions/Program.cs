@@ -33,9 +33,23 @@ namespace ListNumsActions
                         }
                         break;
                     case "remove":
-                        //TODO
+                        int index = int.Parse(cmd[1]);
+                        if (index >= 0 && index < nums.Count)
+                        {
+                            nums.RemoveAt(index);
+                        }
                         break;
-                    //TODO
+                    case "add":
+                        int num1 = int.Parse(cmd[1]);
+                        int num2 = int.Parse(cmd[2]);
+                        nums.Add(num1 + num2);
+                        break;
+                    case "large":
+                        int limitLarge = int.Parse(cmd[1]);
+                        var larger = nums.Where(n => n > limitLarge);
+                        Console.WriteLine(string.Join(" ", larger));
+                        break;
+
 
                     default:
                         break;
